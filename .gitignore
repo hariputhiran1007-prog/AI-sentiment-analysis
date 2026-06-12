@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.log
+
+# Keep the trained model for deployment, but do not upload the generated 500k CSV.
+data/reviews_500k.csv
+

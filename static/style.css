@@ -1,0 +1,166 @@
+:root {
+    --bg: #f6f7fb;
+    --panel: #ffffff;
+    --text: #1f2937;
+    --muted: #64748b;
+    --line: #d9e1ec;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --positive: #15803d;
+    --negative: #b91c1c;
+    --neutral: #6b7280;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background:
+        linear-gradient(135deg, rgba(37, 99, 235, 0.12), transparent 32%),
+        linear-gradient(315deg, rgba(20, 184, 166, 0.14), transparent 30%),
+        var(--bg);
+}
+
+.app-shell {
+    width: min(920px, calc(100% - 32px));
+    min-height: 100vh;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+    padding: 40px 0;
+}
+
+.analysis-panel {
+    width: 100%;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+    padding: 32px;
+}
+
+.heading {
+    margin-bottom: 28px;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.05;
+}
+
+.subtitle {
+    max-width: 680px;
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.review-form {
+    display: grid;
+    gap: 12px;
+}
+
+label {
+    font-weight: 700;
+}
+
+textarea {
+    width: 100%;
+    resize: vertical;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 14px;
+    font: inherit;
+    line-height: 1.5;
+    color: var(--text);
+    background: #fbfdff;
+}
+
+textarea:focus {
+    outline: 3px solid rgba(37, 99, 235, 0.18);
+    border-color: var(--primary);
+}
+
+button {
+    justify-self: start;
+    border: 0;
+    border-radius: 8px;
+    padding: 12px 18px;
+    font: inherit;
+    font-weight: 700;
+    color: #ffffff;
+    background: var(--primary);
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--primary-hover);
+}
+
+.message,
+.result {
+    margin-top: 20px;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.error {
+    color: #7f1d1d;
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+}
+
+.result {
+    display: grid;
+    gap: 6px;
+    border: 1px solid var(--line);
+    background: #f8fafc;
+}
+
+.result-label,
+.confidence {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.result strong {
+    font-size: 2rem;
+}
+
+.result-positive strong {
+    color: var(--positive);
+}
+
+.result-negative strong {
+    color: var(--negative);
+}
+
+.result-neutral strong {
+    color: var(--neutral);
+}
+
+@media (max-width: 640px) {
+    .analysis-panel {
+        padding: 24px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+

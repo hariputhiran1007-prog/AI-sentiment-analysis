@@ -1,0 +1,76 @@
+text,sentiment
+"The product quality is excellent and delivery was fast.",Positive
+"I loved the customer support and the packaging was beautiful.",Positive
+"This app is useful, simple, and very easy to understand.",Positive
+"The movie was fantastic and the acting was brilliant.",Positive
+"I am very happy with this purchase.",Positive
+"The food tasted fresh and the staff were friendly.",Positive
+"The laptop works perfectly and battery life is great.",Positive
+"The course content was clear and helpful.",Positive
+"The headphones sound amazing for the price.",Positive
+"The hotel room was clean and comfortable.",Positive
+"The product is okay but not very impressive.",Neutral
+"It works as expected, nothing more and nothing less.",Neutral
+"The service was average and the delivery time was normal.",Neutral
+"The movie was neither good nor bad.",Neutral
+"The design is simple and acceptable.",Neutral
+"I have no strong opinion about this item.",Neutral
+"The phone has basic features and performs normally.",Neutral
+"The experience was fine overall.",Neutral
+"The book was informative but not exciting.",Neutral
+"The meal was decent, but I would not call it special.",Neutral
+"The product stopped working after two days.",Negative
+"I hated the poor service and rude behavior.",Negative
+"The delivery was late and the package was damaged.",Negative
+"This app crashes often and wastes my time.",Negative
+"The movie was boring and too long.",Negative
+"I am disappointed with the low quality.",Negative
+"The food was cold and tasted bad.",Negative
+"The laptop is slow and overheats quickly.",Negative
+"The support team ignored my complaint.",Negative
+"The hotel room was dirty and uncomfortable.",Negative
+"Excellent quality and great value for money.",Positive
+"The team handled my request quickly and politely.",Positive
+"I would happily recommend this product to everyone.",Positive
+"Everything arrived on time and worked beautifully.",Positive
+"The interface is smooth and the features are helpful.",Positive
+"The teacher explained every topic very clearly.",Positive
+"The shoes are comfortable and look stylish.",Positive
+"The camera quality is sharp and impressive.",Positive
+"The repair service was fast and professional.",Positive
+"This was a wonderful experience from start to finish.",Positive
+"Great performance, reliable battery, and fair price.",Positive
+"The restaurant served delicious food with warm service.",Positive
+"I feel satisfied because the result was better than expected.",Positive
+"The booking process was easy and convenient.",Positive
+"The new update made the app faster and cleaner.",Positive
+"Bad quality and a complete waste of money.",Negative
+"The staff were careless and extremely unhelpful.",Negative
+"I would not recommend this product to anyone.",Negative
+"The order arrived broken and the return process was awful.",Negative
+"The interface is confusing and the features are buggy.",Negative
+"The teacher skipped important topics and explained poorly.",Negative
+"The shoes are uncomfortable and look cheap.",Negative
+"The camera quality is blurry and disappointing.",Negative
+"The repair service was slow and unprofessional.",Negative
+"This was a frustrating experience from start to finish.",Negative
+"Poor performance, weak battery, and high price.",Negative
+"The restaurant served tasteless food with cold service.",Negative
+"I feel annoyed because the result was worse than expected.",Negative
+"The booking process was difficult and inconvenient.",Negative
+"The new update made the app slower and messy.",Negative
+"The product has standard quality and a regular price.",Neutral
+"The team answered my request after a normal wait.",Neutral
+"I might use this product again if needed.",Neutral
+"Everything arrived on the expected date.",Neutral
+"The interface has common features and a basic layout.",Neutral
+"The teacher covered the listed topics.",Neutral
+"The shoes fit as described.",Neutral
+"The camera quality is acceptable in normal light.",Neutral
+"The repair service completed the requested work.",Neutral
+"This was a usual experience from start to finish.",Neutral
+"Average performance, normal battery, and expected price.",Neutral
+"The restaurant served ordinary food with standard service.",Neutral
+"I feel neutral because the result matched my expectation.",Neutral
+"The booking process was neither easy nor difficult.",Neutral
+"The new update changed the app layout slightly.",Neutral
