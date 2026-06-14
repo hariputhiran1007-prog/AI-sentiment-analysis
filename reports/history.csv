@@ -1,0 +1,5 @@
+date,review,sentiment,confidence
+2026-06-14 12:00:25,I absolutely love this product.,positive,43.71
+2026-06-14 12:01:16,This is the worst product ever.,negative,67.74
+2026-06-14 12:01:32,This is the best product ever.,positive,65.61
+2026-06-14 12:01:38,This is the best product,positive,68.62

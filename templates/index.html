@@ -1,45 +1,168 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AI Sentiment Analysis</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Sentiment Analysis System</title>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <main class="app-shell">
-        <section class="analysis-panel">
-            <div class="heading">
-                <p class="eyebrow">Machine Learning Project</p>
-                <h1>AI Based Sentiment Analysis System</h1>
-                <p class="subtitle">Analyze a review or comment and classify it as Positive, Negative, or Neutral.</p>
+
+<div class="theme-toggle">
+    <button onclick="toggleTheme()">🌙 / ☀️</button>
+</div>
+
+<div class="main-container">
+
+    <div class="hero-card">
+
+        <div class="logo-box">
+            <div class="ai-logo">AI</div>
+            <div>
+                <h1>AI Sentiment Analyzer</h1>
+                <p>Predict Positive, Negative, or Neutral sentiment instantly.</p>
+            </div>
+        </div>
+
+        <form method="POST" onsubmit="showLoader()">
+
+            <label>Enter Review / Comment</label>
+
+            <textarea name="review" placeholder="Type your review here..." required>{{ review_text }}</textarea>
+
+            <button class="analyze-btn" type="submit">
+                Analyze Sentiment
+            </button>
+
+            <div id="loader" class="loader">
+                Analyzing sentiment...
             </div>
 
-            <form method="post" class="review-form">
-                <label for="review">Review or Comment</label>
-                <textarea
-                    id="review"
-                    name="review"
-                    rows="7"
-                    placeholder="Type a review here..."
-                    required
-                >{{ review_text }}</textarea>
-                <button type="submit">Analyze Sentiment</button>
-            </form>
+        </form>
 
-            {% if error %}
-                <div class="message error">{{ error }}</div>
-            {% endif %}
+        <div class="examples">
+            <p>Try examples:</p>
 
-            {% if result %}
-                <div class="result result-{{ result.sentiment | lower }}">
-                    <span class="result-label">Predicted Sentiment</span>
-                    <strong>{{ result.sentiment }}</strong>
-                    <span class="confidence">Confidence: {{ result.confidence }}%</span>
+            <button type="button" onclick="fillExample('I absolutely love this product.')">😊 Positive</button>
+            <button type="button" onclick="fillExample('The package arrived yesterday.')">😐 Neutral</button>
+            <button type="button" onclick="fillExample('This is the worst product ever.')">😠 Negative</button>
+        </div>
+
+        {% if error %}
+        <div class="error-box">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        {% if result %}
+        <div class="result-grid">
+
+            <div class="result-card">
+
+                <h2>Prediction Result</h2>
+
+                <div class="sentiment-badge {{ result.sentiment|lower }}">
+                    {{ result.sentiment.upper() }}
                 </div>
+
+                <p class="confidence-text">
+                    Confidence: {{ result.confidence }}%
+                </p>
+
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: {{ result.confidence }}%;"></div>
+                </div>
+
+            </div>
+
+            {% if probabilities %}
+            <div class="chart-card">
+
+                <h2>Probability Chart</h2>
+
+                {% set positive = probabilities.get('positive', 0) %}
+                {% set negative = probabilities.get('negative', 0) %}
+                {% set neutral = probabilities.get('neutral', 0) %}
+
+                <div class="pie-chart"
+                     style="background: conic-gradient(
+                        #22c55e 0% {{ positive }}%,
+                        #ef4444 {{ positive }}% {{ positive + negative }}%,
+                        #f59e0b {{ positive + negative }}% 100%
+                     );">
+                    <span>AI</span>
+                </div>
+
+                <div class="legend">
+                    <p><span class="dot positive-dot"></span> Positive: {{ positive }}%</p>
+                    <p><span class="dot negative-dot"></span> Negative: {{ negative }}%</p>
+                    <p><span class="dot neutral-dot"></span> Neutral: {{ neutral }}%</p>
+                </div>
+
+            </div>
             {% endif %}
-        </section>
-    </main>
+
+        </div>
+        {% endif %}
+
+        <div class="history-card">
+
+            <h2>Prediction History</h2>
+
+            {% if history %}
+                {% for item in history %}
+                <div class="history-item">
+                    <div>
+                        <strong>{{ item.sentiment.upper() }}</strong>
+                        <p>{{ item.review }}</p>
+                    </div>
+                    <span>{{ item.confidence }}%</span>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p class="empty-history">No predictions yet.</p>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    Developed by Hariharan S • Flask • Scikit-Learn • Render
+</footer>
+
+<script>
+function fillExample(text){
+    document.querySelector("textarea").value = text;
+}
+
+function showLoader(){
+    document.getElementById("loader").style.display = "block";
+}
+
+function toggleTheme(){
+    const html = document.documentElement;
+    const currentTheme = html.getAttribute("data-theme");
+
+    if(currentTheme === "dark"){
+        html.setAttribute("data-theme", "light");
+        localStorage.setItem("theme", "light");
+    } else {
+        html.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+    }
+}
+
+window.onload = function(){
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+}
+</script>
+
 </body>
 </html>
-
